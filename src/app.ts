@@ -1,3 +1,4 @@
+import "src/services/openai-service";
 import morgan from "morgan";
 import helmet from "helmet";
 import express from "express";
@@ -9,6 +10,7 @@ import { NodeEnvs } from "src/common/constants";
 import { SampleRouter } from "./routes/SampleRouter";
 import { routeErrorMiddleware } from "./middlewares/routeErrorMiddleware";
 import { LogMessages } from "./common/LogMessages";
+import { ChatRouter } from "./routes/chat/chat";
 
 const app = express();
 
@@ -20,6 +22,7 @@ if (Env.NodeEnv === NodeEnvs.Dev) app.use(morgan("dev"));
 
 // registering routes
 app.use(Paths.Sample.Base, SampleRouter);
+app.use(Paths.Chat.Base, ChatRouter);
 
 // route error handling middleware
 app.use(routeErrorMiddleware);

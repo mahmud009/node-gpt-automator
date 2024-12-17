@@ -1,4 +1,4 @@
-import jetEnv, { num } from "jet-env";
+import jetEnv, { num, str } from "jet-env";
 import { isEnumVal } from "jet-validators";
 
 import { NodeEnvs } from "./constants";
@@ -6,4 +6,5 @@ import { NodeEnvs } from "./constants";
 export default jetEnv({
   NodeEnv: isEnumVal(NodeEnvs),
   Port: num,
+  OpenAiApiKey: str,
 });

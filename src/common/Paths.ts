@@ -4,4 +4,8 @@ export const Paths = {
     Base: "/sample",
     Test: "/test",
   },
+  Chat: {
+    Base: "/chat",
+    Send: "/send",
+  },
 } as const;
